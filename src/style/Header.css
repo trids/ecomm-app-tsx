@@ -1,0 +1,41 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-logo a {
+    text-decoration: none;
+    color: #db1919;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.header-search input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 10px;
+}
+
+.header-action ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.header-action li {
+    margin-right: 20px;
+}
+
+.header-action a{
+    text-decoration: none;
+    color: #333;
+}
+
+.header-action i {
+    margin-right: 5px;
+}

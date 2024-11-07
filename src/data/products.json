@@ -1,0 +1,32 @@
+[
+    {
+      "id": 1,
+      "name": "Wireless Headphones",
+      "price": 199.99,
+      "image": "https://m.media-amazon.com/images/I/61E3AcWQg1L._AC_UL320_.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Smartphone",
+      "price": 699.99,
+      "image": "https://m.media-amazon.com/images/I/41fCDR6pjpL._SX300_SY300_QL70_FMwebp_.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Laptop",
+      "price": 1299.99,
+      "image": "https://p1-ofp.static.pub//medias/25932471988_LenovoThinkBook16Gen6ArcticGreyIMG_202307250411401709625997373.png"
+    },
+    {
+      "id": 4,
+      "name": "Smartwatch",
+      "price": 299.99,
+      "image": "https://m.media-amazon.com/images/I/61hHp8WaBVL._AC_UL320_.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Bluetooth Speaker",
+      "price": 89.99,
+      "image": "https://m.media-amazon.com/images/I/41EN3t0SHsL._SX300_SY300_QL70_FMwebp_.jpg"
+    }
+  ]
