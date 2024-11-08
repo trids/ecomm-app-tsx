@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
         </ul>
       </div>
       <div className="footer-copyright">
-        &copy; 2023 NBay, All rights reserved.
+        &copy; 2023 TBay, All rights reserved.
       </div>
     </footer>
   );

@@ -1,53 +1,87 @@
-import React, {Component, ChangeEvent} from "react";
+import React, { Component, ChangeEvent } from 'react';
 
 interface TaxCalculatorProps {
-    initialIncome? : number; // we will assume that the initial income can be passed as a prop
+  initialIncome?: number;  // optional initial income as prop
 }
 
 interface TaxCalculatorState {
-    income: number;
-    taxRate: number;
-    tax: number;
+  income: number;
+  taxRate: number;
+  tax: number;
 }
 
-class TaxCalculator extends Component< TaxCalculatorProps, TaxCalculatorState> {
-    constructor(props: TaxCalculatorProps) {
-        super(props);
-        this.state = {
-            income: props.initialIncome || 0,
-            taxRate: 0.1, // fixed tax rate as 10%
-            tax: 0
-        }
-        console.log("Constructor: initializing state and binding methods");
-        
-    }
-    // Mounting phase methods
-    // 1. getDerivedStateFromProps : sync state with props during mount and unmount
-    static getDerivedStateFromProps( nextProps: TaxCalculatorProps, prevState: TaxCalculatorState) {
-        console.log("getDerivedStateFromProps is checking if the income needs to be updated form the props");
+class TaxCalculator extends Component<TaxCalculatorProps, TaxCalculatorState> {
+  constructor(props: TaxCalculatorProps) {
+    super(props);
+    this.state = {
+      income: props.initialIncome || 0,
+      taxRate: 0.1,  // 10% tax rate
+      tax: 0
+    };
+    console.log("Constructor: Initializing state and binding methods");
+  }
 
-        if ( nextProps.initialIncome !== undefined && nextProps.initialIncome !== prevState.income) {
-            return {
-                income: nextProps.initialIncome,
-                tax: nextProps.initialIncome + prevState.taxRate
-            }
-        }
-        return null; // no state change 
-    }
+  /**
+   * Mounting Phase Methods
+   */
 
-    // component did mount 
-    componentDidMount(): void {
-        console.log("Component has been mounted and inializing tax calculations");
-        this.calculateTax();
-        
-        
+  static getDerivedStateFromProps(nextProps: TaxCalculatorProps, prevState: TaxCalculatorState) {
+    console.log("getDerivedStateFromProps: Checking if income needs to be updated from props");
+    if (nextProps.initialIncome !== undefined && nextProps.initialIncome !== prevState.income) {
+      return {
+        income: nextProps.initialIncome,
+        tax: nextProps.initialIncome * prevState.taxRate
+      };
     }
-    calculateTax = () => {
-        const tax = this.state.income * this.state.taxRate;
-        this.setState({tax})
+    return null; // No state change
+  }
+
+  componentDidMount() {
+    console.log("componentDidMount: Component mounted. Initializing tax calculation.");
+    this.calculateTax();
+  }
+
+  /**
+   * Custom Methods
+   */
+
+     handleIncomeChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const newIncome = parseFloat(event.target.value);
+    this.setState({
+      income: newIncome,
+      tax: newIncome * this.state.taxRate
+    });
+  };
+
+  calculateTax = () => {
+    const tax = this.state.income * this.state.taxRate;
+    if (tax !== this.state.tax) {
+      this.setState({ tax });
     }
+  };
+
+  /**
+   * Render Method
+   */
+
+  render() {
+    console.log("Render: Rendering the component");
+    return (
+      <div>
+        <h2>Tax Calculator</h2>
+        <label>
+          Income:
+          <input
+            type="number"
+            value={this.state.income}
+            onChange={this.handleIncomeChange}
+          />
+        </label>
+        <p>Tax Rate: {this.state.taxRate * 100}%</p>
+        <p>Calculated Tax: ${this.state.tax.toFixed(2)}</p>
+      </div>
+    );
+  }
 }
 
-
-
-export default TaxCalculator
+export default TaxCalculator;
