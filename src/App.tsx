@@ -7,6 +7,7 @@ import UserList from './components/componentDidMount';
 import { useState } from "react";
 import Counter from "./components/Updating";
 import Signin from './components/Signin';
+import Signup from './components/Signup';
  
 function App() {
   const [count, setCount] = useState(0);
@@ -28,6 +29,7 @@ function App() {
       </div>
       <Counter count={count}></Counter>
       <Signin/>
+      <Signup/>
       <Footer/>
     </div>
   );
