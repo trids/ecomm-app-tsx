@@ -1,6 +1,7 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import '../style/Signup.css'
 import { useNavigate } from 'react-router-dom';
+import axios from "axios";
 
 const Signup: React.FC = () => {
     const [fullName, setFullName] = useState<string>('');
@@ -11,14 +12,31 @@ const Signup: React.FC = () => {
     const [error, setError] = useState<string>('');
 
     const navigate = useNavigate();
-    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+
+    //this is the event handler
+    //CRUD -> C => create(post method)
+    const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         if (password != confirmPassword) {
             setError("Password don't match");
         } else {
             setError('');
+            const userData = { fullName, email, password };
             console.log("user Data:", { fullName, email, password });
             alert("Signup Successful")
+
+            try {
+                const response = await axios.post("http://localhost:5000/users", userData);
+                if (response.status === 201) {
+                    console.log("User saved successfully");
+                    setError('');
+                } else {
+                    console.log("error while saving data", response.data);
+                    setError("Failed to signup, please try again")
+                }
+            } catch (error) {
+                console.error("error sending data", error)
+            }
         }
     }
 
