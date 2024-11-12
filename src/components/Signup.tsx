@@ -1,5 +1,6 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import '../style/Signup.css'
+import { useNavigate } from 'react-router-dom';
 
 const Signup: React.FC = () => {
     const [fullName, setFullName] = useState<string>('');
@@ -9,6 +10,7 @@ const Signup: React.FC = () => {
     const [confirmPassword, setConfirmPassword] = useState<string>('');
     const [error, setError] = useState<string>('');
 
+    const navigate = useNavigate();
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         if (password != confirmPassword) {
@@ -71,6 +73,9 @@ const Signup: React.FC = () => {
 
                 <button type="submit" className="signup-button">create Account</button>
             </form>
+            <button onClick={() => { navigate("/userList") }} style={{ margin: '10px' }} className="signup-button">
+                Registered User
+            </button>
             <p className="terms">
                 By creating this account you agree to our <a href="/">Terms</a> and <a href="/">Privacy Policy</a>.
             </p>

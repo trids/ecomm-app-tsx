@@ -8,18 +8,28 @@ import { useState } from "react";
 import Counter from "./components/Updating";
 import Signin from './components/Signin';
 import Signup from './components/Signup';
- 
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
 function App() {
-  const [count, setCount] = useState(0);
-  const increment = () => {
-    setCount((prevCount) => prevCount + 1);
-  };
-  const decrement = () => {
-    setCount((prevCount) => prevCount - 1);
-  };
+  // const [count, setCount] = useState(0);
+  // const increment = () => {
+  //   setCount((prevCount) => prevCount + 1);
+  // };
+  // const decrement = () => {
+  //   setCount((prevCount) => prevCount - 1);
+  // };
   return (
     <div className="App">
-      <Header/>
+      <Header />
+      <Router>
+        <Routes>
+          <Route path='/' Component={ProductList} />
+          <Route path='/userList' Component={UserList} />
+          <Route path='/signup' Component={Signup} />
+        </Routes>
+      </Router>
+      <Footer />
+      {/* <Header/>
       <ProductList/>
       <TaxCalculator/>
       <UserList/>
@@ -30,9 +40,9 @@ function App() {
       <Counter count={count}></Counter>
       <Signin/>
       <Signup/>
-      <Footer/>
+      <Footer/> */}
     </div>
   );
 }
-  
+
 export default App;

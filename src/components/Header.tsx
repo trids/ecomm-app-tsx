@@ -20,7 +20,7 @@ const Header: React.FC = () => {
             </a>
           </li>
           <li>
-            <a href="/login">
+            <a href="/signup">
               <i className="fafa-user"></i> Sign In
             </a>
           </li>
