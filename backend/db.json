@@ -11,6 +11,134 @@
       "fullName": "Tri",
       "email": "tri@gmail.com",
       "password": "t123"
+    },
+    {
+      "id": "8e31",
+      "productName": "camera",
+      "price": "566",
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSEFumOLDfmwCxA120jgSnkAsVqrjRHMOeOigNABW8pb2BubzUnUUngia9l5hG1gO5FtDTjPe86nBfqPsRb-wvMrQe9TA6RezqxfyrpMSIWegkh0wCbBMqvgw"
+    },
+    {
+      "id": "43de",
+      "productName": "camera",
+      "price": "566",
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSEFumOLDfmwCxA120jgSnkAsVqrjRHMOeOigNABW8pb2BubzUnUUngia9l5hG1gO5FtDTjPe86nBfqPsRb-wvMrQe9TA6RezqxfyrpMSIWegkh0wCbBMqvgw"
+    },
+    {
+      "id": "6bbb",
+      "productName": "camera",
+      "price": "566",
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSEFumOLDfmwCxA120jgSnkAsVqrjRHMOeOigNABW8pb2BubzUnUUngia9l5hG1gO5FtDTjPe86nBfqPsRb-wvMrQe9TA6RezqxfyrpMSIWegkh0wCbBMqvgw"
+    },
+    {
+      "id": "b167",
+      "productName": "camera",
+      "price": "566",
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSEFumOLDfmwCxA120jgSnkAsVqrjRHMOeOigNABW8pb2BubzUnUUngia9l5hG1gO5FtDTjPe86nBfqPsRb-wvMrQe9TA6RezqxfyrpMSIWegkh0wCbBMqvgw"
+    },
+    {
+      "id": "9c7d",
+      "productName": "camera",
+      "price": "566",
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSEFumOLDfmwCxA120jgSnkAsVqrjRHMOeOigNABW8pb2BubzUnUUngia9l5hG1gO5FtDTjPe86nBfqPsRb-wvMrQe9TA6RezqxfyrpMSIWegkh0wCbBMqvgw"
+    },
+    {
+      "id": "0a29",
+      "productName": "camera",
+      "price": "566",
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSEFumOLDfmwCxA120jgSnkAsVqrjRHMOeOigNABW8pb2BubzUnUUngia9l5hG1gO5FtDTjPe86nBfqPsRb-wvMrQe9TA6RezqxfyrpMSIWegkh0wCbBMqvgw"
+    },
+    {
+      "id": "1090",
+      "productName": "camera",
+      "price": "566",
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSEFumOLDfmwCxA120jgSnkAsVqrjRHMOeOigNABW8pb2BubzUnUUngia9l5hG1gO5FtDTjPe86nBfqPsRb-wvMrQe9TA6RezqxfyrpMSIWegkh0wCbBMqvgw"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Wireless Headphones",
+      "price": 199.99,
+      "image": "https://m.media-amazon.com/images/I/61E3AcWQg1L._AC_UL320_.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Smartphone",
+      "price": 699.99,
+      "image": "https://m.media-amazon.com/images/I/41fCDR6pjpL._SX300_SY300_QL70_FMwebp_.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Laptop",
+      "price": 1299.99,
+      "image": "https://p1-ofp.static.pub//medias/25932471988_LenovoThinkBook16Gen6ArcticGreyIMG_202307250411401709625997373.png"
+    },
+    {
+      "id": 4,
+      "name": "Smartwatch",
+      "price": 299.99,
+      "image": "https://m.media-amazon.com/images/I/61hHp8WaBVL._AC_UL320_.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Bluetooth Speaker",
+      "price": 89.99,
+      "image": "https://m.media-amazon.com/images/I/41EN3t0SHsL._SX300_SY300_QL70_FMwebp_.jpg"
+    },
+    {
+      "id": "b77f",
+      "productName": "camera",
+      "price": "566",
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSEFumOLDfmwCxA120jgSnkAsVqrjRHMOeOigNABW8pb2BubzUnUUngia9l5hG1gO5FtDTjPe86nBfqPsRb-wvMrQe9TA6RezqxfyrpMSIWegkh0wCbBMqvgw"
+    },
+    {
+      "id": "b7e1",
+      "productName": "abc",
+      "price": "568",
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSEFumOLDfmwCxA120jgSnkAsVqrjRHMOeOigNABW8pb2BubzUnUUngia9l5hG1gO5FtDTjPe86nBfqPsRb-wvMrQe9TA6RezqxfyrpMSIWegkh0wCbBMqvgw"
+    },
+    {
+      "id": "7003",
+      "productName": "abc",
+      "price": "568",
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSEFumOLDfmwCxA120jgSnkAsVqrjRHMOeOigNABW8pb2BubzUnUUngia9l5hG1gO5FtDTjPe86nBfqPsRb-wvMrQe9TA6RezqxfyrpMSIWegkh0wCbBMqvgw"
+    },
+    {
+      "id": "dd10",
+      "productName": "abc",
+      "price": "568",
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSEFumOLDfmwCxA120jgSnkAsVqrjRHMOeOigNABW8pb2BubzUnUUngia9l5hG1gO5FtDTjPe86nBfqPsRb-wvMrQe9TA6RezqxfyrpMSIWegkh0wCbBMqvgw"
+    },
+    {
+      "id": "76c4",
+      "productName": "abc",
+      "price": "568",
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSEFumOLDfmwCxA120jgSnkAsVqrjRHMOeOigNABW8pb2BubzUnUUngia9l5hG1gO5FtDTjPe86nBfqPsRb-wvMrQe9TA6RezqxfyrpMSIWegkh0wCbBMqvgw"
+    },
+    {
+      "id": "68ac",
+      "productName": "abc",
+      "price": "568",
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSEFumOLDfmwCxA120jgSnkAsVqrjRHMOeOigNABW8pb2BubzUnUUngia9l5hG1gO5FtDTjPe86nBfqPsRb-wvMrQe9TA6RezqxfyrpMSIWegkh0wCbBMqvgw"
+    },
+    {
+      "id": "c1d7",
+      "productName": "abc",
+      "price": "568",
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSEFumOLDfmwCxA120jgSnkAsVqrjRHMOeOigNABW8pb2BubzUnUUngia9l5hG1gO5FtDTjPe86nBfqPsRb-wvMrQe9TA6RezqxfyrpMSIWegkh0wCbBMqvgw"
+    },
+    {
+      "id": "7226",
+      "productName": "abc",
+      "price": "568",
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSEFumOLDfmwCxA120jgSnkAsVqrjRHMOeOigNABW8pb2BubzUnUUngia9l5hG1gO5FtDTjPe86nBfqPsRb-wvMrQe9TA6RezqxfyrpMSIWegkh0wCbBMqvgw"
+    },
+    {
+      "id": "059c",
+      "productName": "abc",
+      "price": "568",
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSEFumOLDfmwCxA120jgSnkAsVqrjRHMOeOigNABW8pb2BubzUnUUngia9l5hG1gO5FtDTjPe86nBfqPsRb-wvMrQe9TA6RezqxfyrpMSIWegkh0wCbBMqvgw"
     }
   ]
 }

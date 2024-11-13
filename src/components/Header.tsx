@@ -14,6 +14,11 @@ const Header: React.FC = () => {
       </div>
       <div className="header-action">
         <ul>
+        <li>
+            <a href="/productManagement">
+              <i className="fafa-shopping-cart"></i> Product Management
+            </a>
+          </li>
           <li>
             <a href="/cart">
               <i className="fafa-shopping-cart"></i> Cart

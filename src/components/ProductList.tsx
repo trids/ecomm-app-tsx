@@ -22,7 +22,9 @@ class ProductList extends Component<ProductListProps> {
             <div className="product-list">
                 {productsData.map((product) => (
                     <ProductCard key={product.id} product= {product} />
+                    
                 ))}
+                
             </div>
         );
     }
