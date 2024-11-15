@@ -55,4 +55,4 @@ class UserList extends Component<{}, AppState> {
     }
 }
 
-export default UserList
+export default UserList;

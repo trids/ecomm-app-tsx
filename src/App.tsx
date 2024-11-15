@@ -11,6 +11,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import ProductManagement from './components/ProductManagement';
 import UserList from './components/UserList';
 import AddProduct from './components/AddProduct';
+import Cart from './components/Cart';
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -22,14 +23,17 @@ function App() {
   // };
   return (
     <div className="App">
-      <Header />
+      
       <Router>
+      <Header />
         <Routes>
           <Route path='/productManagement' Component={ProductManagement} />
           <Route path='/' Component={ProductList} />
           <Route path='/userList' Component={UserList} />
           <Route path='/addProduct' Component={AddProduct} />
           <Route path='/signup' Component={Signup} />
+          <Route path='/cart' Component={Cart} />
+
         </Routes>
       </Router>
       <Footer />

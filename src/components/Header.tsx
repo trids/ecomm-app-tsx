@@ -1,8 +1,14 @@
 import React from "react";
- 
+
 import "../style/Header.css";
- 
+import { Navigate, useNavigate } from "react-router-dom";
+
 const Header: React.FC = () => {
+  const navigate = useNavigate();
+
+  function handleClick() {
+    navigate('/cart');
+  }
   return (
     <header className="header">
       <div className="header-logo">
@@ -14,15 +20,15 @@ const Header: React.FC = () => {
       </div>
       <div className="header-action">
         <ul>
-        <li>
+          <li>
             <a href="/productManagement">
               <i className="fafa-shopping-cart"></i> Product Management
             </a>
           </li>
           <li>
-            <a href="/cart">
-              <i className="fafa-shopping-cart"></i> Cart
-            </a>
+            <button type="button" onClick={handleClick}>
+              cart
+            </button>
           </li>
           <li>
             <a href="/signup">
@@ -34,5 +40,5 @@ const Header: React.FC = () => {
     </header>
   );
 };
- 
+
 export default Header; 
