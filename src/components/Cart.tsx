@@ -13,6 +13,11 @@ const Cart: React.FC = () => {
         dispatch(removeFromCart(productId));
     };
 
+    var sum = 0;
+    const tot = cart.map((product) => {
+        sum = sum+  product.price;
+    });
+
     return (
         <div className="cart-container">
             <h2>Shopping Cart</h2>
@@ -30,11 +35,15 @@ const Cart: React.FC = () => {
                                     Remove
                                 </button>
                             </div>
+                            
                         </li>
                     ))}
                 </ul>
+                
             )}
+            <div>Total: {sum}</div>
         </div>
+        
     );
 };
 

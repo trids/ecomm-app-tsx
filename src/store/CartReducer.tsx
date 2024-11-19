@@ -15,7 +15,10 @@ const initialState: CartState = {
     cart: [],
 };
 
-export const cartReducer = (state = initialState, action: CartActionTypes): CartState => {
+export const cartReducer = (
+    state: CartState = initialState, 
+    action: CartActionTypes): 
+    CartState => {
     switch (action.type) {
         case ADD_TO_CART:
             return { ...state, cart: [...state.cart, action.payload] };
