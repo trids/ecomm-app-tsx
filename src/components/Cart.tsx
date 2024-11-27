@@ -1,7 +1,7 @@
 import React from "react";
-import { UseDispatch, useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../store";
-import { removeFromCart } from "../store/CartActions";
+import { removeFromCartAsync } from "../store/CartActions";
 import { AppDispatch } from "../store";
 import "../style/Cart.css"
 
@@ -9,9 +9,19 @@ const Cart: React.FC = () => {
     const cart = useSelector((state: RootState) => state.cart.cart);
     const dispatch = useDispatch<AppDispatch>();
 
-    const handleRemove = (productId: number) => {
-        dispatch(removeFromCart(productId));
-    };
+    // const handleRemove = (productId: number) => {
+    //     dispatch(removeFromCartAsync(productId));
+    // };
+
+    const handleRemove = async (productId: number) => {
+        try {
+          await dispatch(removeFromCartAsync(productId)).unwrap();
+          console.log("Product removed from cart");
+          
+        } catch (error) {
+          console.error("Failed to remove product from cart:", error);
+        }
+      };
 
     var sum = 0;
     const tot = cart.map((product) => {
