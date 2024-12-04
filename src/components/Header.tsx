@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { AuthService } from "./Login"; // Import the AuthService
 import Swal from "sweetalert2";
 import axios from "axios";
+import productsData from '../data/products.json'
 
 import "../style/Header.css";
 
@@ -17,10 +18,10 @@ const Header: React.FC = () => {
     };
 
     checkAuthStatus();
-    
+
     // Add listener for storage events to sync auth state across tabs
     window.addEventListener('storage', checkAuthStatus);
-    
+
     return () => {
       window.removeEventListener('storage', checkAuthStatus);
     };
@@ -30,10 +31,10 @@ const Header: React.FC = () => {
     try {
       // Optional: Call backend logout route
       await axios.post('http://localhost:8000/api/auth/logout');
-      
+
       // Client-side logout
       AuthService.logout();
-      
+
       // Show logout success
       Swal.fire({
         icon: 'success',
@@ -47,12 +48,47 @@ const Header: React.FC = () => {
       navigate('/login');
     } catch (error) {
       console.error('Logout failed', error);
-      
+
       // Fallback logout
       AuthService.logout();
       navigate('/login');
     }
   };
+
+  interface Products {
+    id: number,
+    name: string,
+    price: number,
+    image: string
+  }
+
+  const searchItemsByName = () => {
+    var el = (document.getElementById('search') as HTMLInputElement).value;
+    const products = axios.get("http://localhost:5000/products");
+    // const [products, setProducts] = useState<Products[]>([]);
+    // useEffect(() => {
+    //   const fetchUsers = async () => {
+    //     try {
+    //       const response = await axios.get("http://localhost:5000/products");
+    //       setProducts(response.data);
+    //     } catch (error) {
+    //       console.error("error fetching users", error);
+    //     }
+    //   };
+    //   fetchUsers();
+    // }, []);
+
+    {
+      productsData.map((product) => {
+        alert(el)
+        if (product.name.includes(el)) {
+          alert(product.name)
+          axios.post("http://localhost:5000/filteredProduct", product);
+        }
+      })
+    };
+    navigate("/filteredProduct");
+  }
 
   return (
     <header className="header">
@@ -60,8 +96,8 @@ const Header: React.FC = () => {
         <a href="/">TBay</a>
       </div>
       <div className="header-search">
-        <input type="text" placeholder="Search Items" />
-        <button className="search-button">Search</button>
+        <input id="search" type="text" placeholder="Search Items" />
+        <button className="search-button" onClick={searchItemsByName}>Search</button>
       </div>
       <div className="header-action">
         <ul>
@@ -73,7 +109,7 @@ const Header: React.FC = () => {
               Cart
             </button>
           </li>
-          
+
           {/* Conditional rendering based on authentication */}
           {!isAuthenticated ? (
             <>

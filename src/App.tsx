@@ -13,6 +13,7 @@ import { useParams } from "react-router-dom";
 import Cart from "./components/Cart";
 import { ProtectedRoute } from "./components/Login";
 import Login from "./components/Login";
+import FilteredProduct from "./components/FilteredProduct";
 function App() {
   // const [userId, setUserId] = useState(1);
 
@@ -68,6 +69,7 @@ function App() {
           <Route path="/editProduct:/id" element={<EditProductWrapper />} />
           <Route path="/cart" Component={Cart} />
           <Route path="login" Component={Login} />
+          <Route path="/filteredProduct" Component={FilteredProduct} />
         </Routes>
       </Router>
 

@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { CartState } from './CartTypes';
-import { addToCartAsync, removeFromCartAsync } from './CartActions';
+import { addToCartAsync, removeFromCartAsync, removeAllFromCartAsync } from './CartActions';
 
 const initialState: CartState = {
     cart: [],
@@ -48,7 +48,16 @@ const cartSlice = createSlice({
             .addCase(removeFromCartAsync.rejected, (state, action) => {
                 state.status = 'failed';
                 state.error = action.error.message ?? 'Failed to remove from cart';
-            });
+            })
+            .addCase(removeAllFromCartAsync.pending, (state) => {
+                state.status = 'loading';
+                state.error = null;
+            })
+            .addCase(removeAllFromCartAsync.fulfilled, (state) => {
+                state.status = 'succeeded';
+                state.cart = [];
+                state.error = null;
+            })
     }
 });
 

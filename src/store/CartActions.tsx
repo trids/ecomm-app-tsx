@@ -6,6 +6,7 @@ import { Product } from './CartTypes';
 export const CART_ADD = 'cart/addToCartAsync';
 export const CART_REMOVE = 'cart/removeFromCartAsync';
 export const LOAD_DATA = 'cart/loadDataAsync'
+export const CLEAR_CART = 'cart/removeAllFromCartAsync'
 
 // Async Actions
 export const addToCartAsync = createAsyncThunk(
@@ -35,6 +36,18 @@ export const removeFromCartAsync = createAsyncThunk(
     }
 );
 
+export const removeAllFromCartAsync = createAsyncThunk(
+    CLEAR_CART,
+    async () => {
+        try {
+            await axios.delete(`http://localhost:5000/cart/`);
+            return [];
+        } catch (error) {
+            console.log("here: ", error)
+            throw new Error('Failed to remove item from cart');
+        }
+    }
+);
 
 // import { Product } from "./CartReducer";
 

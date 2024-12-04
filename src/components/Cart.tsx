@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../store";
-import { removeFromCartAsync } from "../store/CartActions";
+import { removeAllFromCartAsync, removeFromCartAsync } from "../store/CartActions";
 import { AppDispatch } from "../store";
 import "../style/Cart.css"
 
@@ -9,23 +9,22 @@ const Cart: React.FC = () => {
     const cart = useSelector((state: RootState) => state.cart.cart);
     const dispatch = useDispatch<AppDispatch>();
 
-    // const handleRemove = (productId: number) => {
-    //     dispatch(removeFromCartAsync(productId));
-    // };
-
+    const handleRemoveAll = async () => {
+        await dispatch(removeAllFromCartAsync());
+    }
     const handleRemove = async (productId: number) => {
         try {
-          await dispatch(removeFromCartAsync(productId)).unwrap();
-          console.log("Product removed from cart");
-          
+            await dispatch(removeFromCartAsync(productId)).unwrap();
+            console.log("Product removed from cart");
+
         } catch (error) {
-          console.error("Failed to remove product from cart:", error);
+            console.error("Failed to remove product from cart:", error);
         }
-      };
+    };
 
     var sum = 0;
     const tot = cart.map((product) => {
-        sum = sum+  product.price;
+        sum = sum + product.price;
     });
 
     return (
@@ -45,15 +44,18 @@ const Cart: React.FC = () => {
                                     Remove
                                 </button>
                             </div>
-                            
+
                         </li>
                     ))}
+                    <button onClick={() => handleRemoveAll()} className="cart-item-remove">
+                        Remove All
+                    </button>
                 </ul>
-                
+
             )}
             <div>Total: {sum}</div>
         </div>
-        
+
     );
 };
 
